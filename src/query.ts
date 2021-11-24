@@ -1,5 +1,8 @@
 interface TransactionQuery {
-  account: string
+  account?: string
+  after?: string;
+  reference?: string;
+  limit?: number;
 }
 
 export {

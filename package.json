@@ -4,16 +4,20 @@
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
   "files": [
-    "/dist"
+    "/dist",
+    "src",
+    "tsconfig.json"
   ],
   "repository": "git@github.com:numary/numary-js.git",
   "author": "Clément Salaün <salaun.clement@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.21.1",
-    "json-schema-to-typescript": "^10.1.4"
+    "json-schema-to-typescript": "^10.1.4",
+    "query-string": "^7.0.1"
   },
   "scripts": {
+    "postinstall": "npm run build",
     "build": "tsc"
   }
 }
