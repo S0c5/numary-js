@@ -1,8 +1,14 @@
-import Cluster from "./cluster";
+import { Cluster, ClusterOpts } from "./cluster";
+export * from './cluster';
+export * from './account';
+export * from './cursor';
+export * from './ledger';
+export * from './query';
+export * from './schema';
 
-function numary() : Cluster {
-  return new Cluster({});
+function numary(options: ClusterOpts) : Cluster {
+  return new Cluster(options);
 }
 
 // export default numary;
-export = numary;
+export default numary;
