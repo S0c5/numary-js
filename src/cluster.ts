@@ -2,12 +2,12 @@ import axios, { AxiosBasicCredentials, AxiosInstance } from "axios";
 import { Info } from "./info";
 import Ledger from "./ledger";
 
-interface ClusterOpts {
+export interface ClusterOpts {
   uri?: string;
   auth?: AxiosBasicCredentials;
 }
 
-class Cluster {
+export class Cluster {
   conn: AxiosInstance;
 
   constructor(opts: ClusterOpts) {
@@ -32,5 +32,3 @@ class Cluster {
     return new Ledger(this, name);
   }
 }
-
-export default Cluster;
