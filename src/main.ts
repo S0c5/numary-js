@@ -1,7 +1,7 @@
-import Cluster from "./cluster";
+import { Cluster, ClusterOpts } from "./cluster";
 
-function numary() : Cluster {
-  return new Cluster({});
+function numary(options: ClusterOpts) : Cluster {
+  return new Cluster(options);
 }
 
 // export default numary;
