@@ -1,5 +1,5 @@
 import { Account } from "./account";
-import Cluster from "./cluster";
+import { Cluster } from "./cluster";
 import Cursor from "./cursor";
 import { Transaction } from "./schema";
 import { TransactionQuery } from './query';
