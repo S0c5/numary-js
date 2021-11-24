@@ -1,10 +1,11 @@
+import { URLSearchParams } from 'url';
 import { Account } from "./account";
-import Cluster from "./cluster";
+import { Cluster } from "./cluster";
 import Cursor from "./cursor";
 import { Transaction } from "./schema";
 import { TransactionQuery } from './query';
 
-class Ledger {
+export class Ledger {
   name: string;
   cluster: Cluster;
 
@@ -24,7 +25,7 @@ class Ledger {
   }
 
   async getTransactions(query?: TransactionQuery) : Promise<Cursor<Transaction>> {
-    const res = await this.cluster.conn.get(`/${this.name}/transactions`);
+    const res = await this.cluster.conn.get(`/${this.name}/transactions?${query}${new URLSearchParams(<Record<any, any>>query).toString()}`);
     return res.data;
   }
 
